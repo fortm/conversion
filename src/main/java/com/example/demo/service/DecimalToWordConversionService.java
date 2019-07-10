@@ -1,12 +1,17 @@
 package com.example.demo.service;
 
+import com.example.demo.DemoApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 
 @Service
 public class DecimalToWordConversionService {
-    static HashMap<Integer, String> wordMap = new HashMap<>();
+    Logger logger = LoggerFactory.getLogger(DemoApplication.class);
+
+    private static HashMap<Integer, String> wordMap = new HashMap<>();
 
     static {
         wordMap.put(0, "Zero");
@@ -71,16 +76,16 @@ public class DecimalToWordConversionService {
             return wordMap.get(0);
         }
         if (trillions != 0) {
-            words += convertUnitToWords(trillions) + " " + "Trillion" + " and ";
+            words += convertUnitToWords(trillions) + " " + "Trillion" + " ";
         }
         if (billions != 0) {
-            words += convertUnitToWords(billions) + " " + "Billion" + " and ";
+            words += convertUnitToWords(billions) + " " + "Billion" + " ";
         }
         if (millions != 0) {
-            words += convertUnitToWords(millions) + " " + "Million" + " and ";
+            words += convertUnitToWords(millions) + " " + "Million" + " ";
         }
         if (thousands != 0) {
-            words += convertUnitToWords(thousands) + " " + "Thousand" + " and ";
+            words += convertUnitToWords(thousands) + " " + "Thousand" + " ";
         }
         if (hundreds != 0) {
             words += convertUnitToWords(hundreds);
