@@ -67,6 +67,9 @@ public class DecimalToWordConversionService {
         int trillions = (int) ((num / Math.pow(10, 12)) % 1000);
 
         String words = "";
+        if (num == 0) {
+            return wordMap.get(0);
+        }
         if (trillions != 0) {
             words += convertUnitToWords(trillions) + " " + "Trillion" + " and ";
         }
