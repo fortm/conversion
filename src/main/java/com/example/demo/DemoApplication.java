@@ -26,6 +26,7 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        
         try {
             long val = Long.parseLong(inputVal);
             logger.info("input={}, output={}", val, decimalToWordConversionService.decimalToWords(val));
@@ -34,5 +35,6 @@ public class DemoApplication implements CommandLineRunner {
         } catch (Exception e) {
             logger.error("Exception occured for input={} ", inputVal, e);
         }
+
     }
 }
