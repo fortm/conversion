@@ -26,7 +26,7 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        
+
         try {
             long val = Long.parseLong(inputVal);
             logger.info("input={}, output={}", val, decimalToWordConversionService.decimalToWords(val));
